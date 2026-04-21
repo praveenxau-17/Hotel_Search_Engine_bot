@@ -116,5 +116,6 @@ def get_booking_handler():
             CONFIRM_BOOKING: [MessageHandler(filters.TEXT & ~filters.COMMAND, confirm_booking)]
         },
         fallbacks=[CommandHandler("cancel", lambda u, c: ConversationHandler.END)],
-        allow_reentry=True
+        allow_reentry=True,
+        per_message=False
     )
