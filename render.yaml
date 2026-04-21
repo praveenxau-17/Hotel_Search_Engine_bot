@@ -1,0 +1,13 @@
+services:
+  - type: worker
+    name: hotel-search-bot
+    env: python
+    # Ensure correct Python version and install dependencies
+    buildCommand: "pip install -r backend/requirements.txt"
+    # Run the main entry point
+    startCommand: "python main.py"
+    envVars:
+      - key: BOT_TOKEN
+        sync: false # Set this in the Render dashboard for security
+      - key: PYTHON_VERSION
+        value: 3.10.0 # Or the version you prefer
