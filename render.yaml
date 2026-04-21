@@ -1,5 +1,5 @@
 services:
-  - type: worker
+  - type: web
     name: hotel-search-bot
     env: python
     # Ensure correct Python version and install dependencies
@@ -8,6 +8,6 @@ services:
     startCommand: "python main.py"
     envVars:
       - key: BOT_TOKEN
-        sync: false # Set this in the Render dashboard for security
+        sync: false # Set this in the Render dashboard
       - key: PYTHON_VERSION
-        value: 3.10.0 # Or the version you prefer
+        value: 3.10.0

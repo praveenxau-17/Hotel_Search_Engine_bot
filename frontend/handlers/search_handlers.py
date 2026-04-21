@@ -133,5 +133,6 @@ def get_search_handler():
             ]
         },
         fallbacks=[CommandHandler("cancel", lambda u, c: -1)],
-        allow_reentry=True
+        allow_reentry=True,
+        per_message=False
     )
